@@ -2,54 +2,53 @@ _This project has been created as part of the 42 curriculum by edpolat._
 
 # get_next_line
 
-## Açıklama
+## Description
 
-`get_next_line`, C dilinde bir dosya tanımlayıcısından (file descriptor) satır satır okuma yapmayı sağlayan bir fonksiyondur.
+`get_next_line` is a function written in C that allows reading from a file descriptor line by line.
 
-Bu projenin temel hedefi, **static variables (statik değişkenler)** kavramını derinlemesine anlamak, dosya okuma işlemlerini yönetmek ve dinamik bellek yönetimi (allocation/free) konusunda yetkinlik kazanmaktır. Standart C kütüphanesinde `getline` gibi fonksiyonlar olsa da, bu projede tekerleği yeniden icat ederek düşük seviyeli I/O işlemlerinin mantığı kavranır.
+The main goal of this project is to gain a deep understanding of **static variables**, manage file reading operations, and develop proficiency in dynamic memory management (allocation/free). Although the standard C library provides functions like `getline`, this project focuses on reinventing the wheel to better grasp low-level I/O operations.
+
+---
+
+## Instructions
+
+### File Structure
+
+The project does not include a Makefile and consists of the following 3 main files:
+* `get_next_line.c`: Contains the core logic of the function.
+* `get_next_line_utils.c`: Includes helper functions (`ft_strlen`, `ft_strjoin`, etc.).
+* `get_next_line.h`: Header file for the library.
 
 ---
 
-## Talimatlar
+### Compilation
 
-### Dosya Yapısı
-
-Proje Makefile içermez ve aşağıdaki 3 temel dosyadan oluşur:
-* `get_next_line.c`: Ana fonksiyon mantığı.
-* `get_next_line_utils.c`: Yardımcı fonksiyonlar (`ft_strlen`, `ft_strjoin` vb.).
-* `get_next_line.h`: Kütüphane başlık dosyası.
-
----
-### Derleme
-
-Projeyi derlemek için `gcc` veya `cc` derleyicisine **BUFFER_SIZE** bayrağını ekleyerek de çalıştırabilirsiniz. Örnek bir `main.c` ile derlemek için:
+You can compile the project using `gcc` or `cc` by adding the **BUFFER_SIZE** flag. For example, to compile with a sample `main.c`:
 
 ```bash
 cc -Wall -Wextra -Werror -D BUFFER_SIZE=42 get_next_line.c get_next_line_utils.c main.c
 ```
 
-## Kullanım
+## Usage
 
-`get_next_line` fonksiyonu, verilen bir dosya tanımlayıcısından (fd) bir satır okur ve dinamik olarak ayrılmış bir string olarak döndürür.
+The `get_next_line` function reads a single line from the given file descriptor (`fd`) and returns it as a dynamically allocated string.
 
-**Fonksiyon Prototipi:**
+**Function Prototype:**
 
 ```c
 char *get_next_line(int fd);
 ```
 
-## Kaynaklar
+## Resourches
 
-42 Intra dökümanları
+42 intra documantation
 
-## AI Kullanımı
+## AI Usage
 
-Bu projede yapay zeka aşağıdaki amaçlarla kullanılmıştır:
+Artificial intelligence was used in this project for the following purposes:
 
-README dosyasının yazımı ve düzenlenmesi
+- Writing and organizing the README file  
+- Ensuring functions comply with 42 norm rules  
+- Understanding the structure and behavior of the `read` function  
 
-Fonksiyonların 42 norm kurallarına uygun hale getirilmesi
-
-read fonksiyonunun yapısı ve işlevinin anlaşılması
-
-Kodun algoritmik tasarımı ve implementasyonu _edpolat_ tarafından yapılmıştır.
+The algorithmic design and implementation of the code were done by _edpolat_.
